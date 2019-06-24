@@ -87,6 +87,9 @@ public class LogFileHandler {
     
     //    <editor-fold defaultstate="collapsed" desc="main methods...">
     public void addHeader(String... newTextItem){
+        //open file
+        file.open();
+        
         tempStringBuffered.delete(0, tempStringBuffered.length());        
         
         for (int count = 0; count < newTextItem.length; count++) {
@@ -97,11 +100,12 @@ public class LogFileHandler {
             }
         }
         
-        if (!file.existsLine(tempStringBuffered.toString())) {
-            file.open();
-            file.addLine(tempStringBuffered.toString());
-            file.save();
+        if (!file.existsLine(tempStringBuffered.toString())) {            
+            file.addLine(tempStringBuffered.toString());            
         }
+        
+        //close and save
+        file.save();
     }
     
     public void addLine(String... newTextItem){

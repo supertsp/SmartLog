@@ -86,12 +86,12 @@ public class Main {
 //        System.out.println(arq);
         
         
-        LogFileHandler log = new LogFileHandler("/logs", "smartMonkey", "errorLogs", "csv");
-        log.addHeader("date", "cpu", "ram", "disk", "processes");
-        log.addLine("30", "40", "70", "chrome:10%,netbeans:50%");
-
-        
-        System.out.println("\n\n\n\n");
+//        LogFileHandler log = new LogFileHandler("/logs", "smartMonkey", "errorLogs", "csv");
+//        log.addHeader("date", "cpu", "ram", "disk", "processes");
+//        log.addLine("30", "40", "70", "chrome:10%,netbeans:50%");
+//
+//        
+//        System.out.println("\n\n\n\n");
     }//main
     //</editor-fold>
 

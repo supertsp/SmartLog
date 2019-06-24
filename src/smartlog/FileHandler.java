@@ -4,15 +4,11 @@ package smartlog;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="documentation...">
@@ -407,6 +403,7 @@ public class FileHandler {
     
     public boolean updateLine(int indexOfLine, String newLine){
         if (opened && indexOfLine > 0 && indexOfLine < (countLines() - 1)) {
+            tempLine = null;
             tempLine = lines.set(indexOfLine, newLine);
             tempLine = linesWhitoutBlankSpaces.set(indexOfLine, convertNormalLineToLineWithoutBlankSpaces(newLine));
             return tempLine != null;
