@@ -259,20 +259,30 @@ public class FileHandler {
     public static String getCurrentDate(){
         return
                 Calendar.getInstance().get(Calendar.YEAR) + "-" +
-                Calendar.getInstance().get(Calendar.MONTH) + "-" +
+                (Calendar.getInstance().get(Calendar.MONTH) + 1) + "-" +
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     }
     
     public static String getCurrentDateTime(){
         return
                 Calendar.getInstance().get(Calendar.YEAR) + "-" +
-                Calendar.getInstance().get(Calendar.MONTH) + "-" +
+                (Calendar.getInstance().get(Calendar.MONTH) + 1) + "-" +
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + " " +
+                Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":" +
+                Calendar.getInstance().get(Calendar.MINUTE);
+    }
+    
+    public static String getCurrentDateTimeMilliseconds(){
+        return
+                Calendar.getInstance().get(Calendar.YEAR) + "-" +
+                (Calendar.getInstance().get(Calendar.MONTH) + 1) + "-" +
                 Calendar.getInstance().get(Calendar.DAY_OF_MONTH) + " " +
                 Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + ":" +
                 Calendar.getInstance().get(Calendar.MINUTE) + ":" +
                 Calendar.getInstance().get(Calendar.SECOND) + "." +
                 Calendar.getInstance().get(Calendar.MILLISECOND);
     }
+    
     //    </editor-fold>
 
     //    <editor-fold defaultstate="collapsed" desc="main methods...">     

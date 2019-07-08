@@ -1,5 +1,3 @@
-package smartlog;
-
 // <editor-fold defaultstate="collapsed" desc="imports...">
 import java.io.File;
 import java.net.URI;
@@ -10,6 +8,7 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static javax.swing.JOptionPane.*;
+import smartlog.FileHandler;
 // </editor-fold>
 
 // <editor-fold defaultstate="collapsed" desc="documentation...">
@@ -29,7 +28,11 @@ public class Main {
     
     //<editor-fold desc="executable method...">
     public static void main(String[] args) {
-
+        
+        System.out.println("CurrentDateTime: " + FileHandler.getCurrentDateTime());
+        
+        
+        
 //        FolderHandler fh = new FolderHandler("testes.txt");
 //        System.out.println(FolderHandler.folderExists("/xampp", "htdocs"));
 //        System.out.println("[" + FolderHandler.getListOfFilesAndSubfolders("/xampp", "htdocs").length + "]" + Arrays.toString(FolderHandler.getListOfFilesAndSubfolders("/xampp", "htdocs")));

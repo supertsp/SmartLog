@@ -112,7 +112,43 @@ public class LogFileHandler {
         file.open();
         
         tempStringBuffered.delete(0, tempStringBuffered.length());
+        
+        for (int count = 0; count < newTextItem.length; count++) {
+            tempStringBuffered.append(newTextItem[count]);
+            
+            if (count + 1 < newTextItem.length) {
+                tempStringBuffered.append(";");
+            }
+        }
+        
+        file.addLine(tempStringBuffered.toString());
+        file.save();
+    }
+    
+    public void addLineWithDateTime(String... newTextItem){
+        file.open();
+        
+        tempStringBuffered.delete(0, tempStringBuffered.length());
         tempStringBuffered.append(FileHandler.getCurrentDateTime());
+        tempStringBuffered.append(";");
+        
+        for (int count = 0; count < newTextItem.length; count++) {
+            tempStringBuffered.append(newTextItem[count]);
+            
+            if (count + 1 < newTextItem.length) {
+                tempStringBuffered.append(";");
+            }
+        }
+        
+        file.addLine(tempStringBuffered.toString());
+        file.save();
+    }
+    
+    public void addLineWithDateTimeMilliseconds(String... newTextItem){
+        file.open();
+        
+        tempStringBuffered.delete(0, tempStringBuffered.length());
+        tempStringBuffered.append(FileHandler.getCurrentDateTimeMilliseconds());
         tempStringBuffered.append(";");
         
         for (int count = 0; count < newTextItem.length; count++) {
